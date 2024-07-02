@@ -1,0 +1,11 @@
+﻿{
+  "Group": "Widgets",
+  "FriendlyName": "NopStationEmployees",
+  "SystemName": "Widgets.NopStationEmployees",
+  "Version": "1.00.0",
+  "SupportedVersions": [ "4.70" ],
+  "Author": "nopStation team",
+  "DisplayOrder": 1,
+  "FileName": "Nop.Plugin.Widgets.NopStationEmployees.dll",
+  "Description": "This plugin is about nopStation Employees"
+}

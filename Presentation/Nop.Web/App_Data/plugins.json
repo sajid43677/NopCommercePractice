@@ -1,0 +1,16 @@
+﻿{
+  "InstalledPluginNames": [
+    "Obsolete field, using only for compatibility"
+  ],
+  "InstalledPlugins": [
+    {
+      "SystemName": "Widgets.NopStationEmployees",
+      "Version": "1.00.0"
+    }
+  ],
+  "PluginNamesToUninstall": [
+    "Widgets.NopStationEmployees"
+  ],
+  "PluginNamesToDelete": [],
+  "PluginNamesToInstall": []
+}

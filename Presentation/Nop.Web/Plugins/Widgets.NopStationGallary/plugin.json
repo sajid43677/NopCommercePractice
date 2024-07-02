@@ -1,0 +1,11 @@
+﻿{
+  "Group": "Widgets",
+  "FriendlyName": "NopStationGallary",
+  "SystemName": "Widgets.NopStationGallary",
+  "Version": "1.0.0",
+  "SupportedVersions": [ "4.70" ],
+  "Author": "nopStation team",
+  "DisplayOrder": 1,
+  "FileName": "Nop.Plugin.Widgets.NopStationGallary.dll",
+  "Description": "This plugin allows you to see the nopStation members."
+}

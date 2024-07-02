@@ -1,0 +1,71 @@
+﻿@model Nop.Plugin.Misc.NopStationGallary.Models.ConfigureModel
+
+@{
+    Layout = "_ConfigurePlugin";
+}
+
+<form asp-controller="WidgetsNivoSlider" asp-action="Configure" method="post">
+    <section class="content">
+        <div class="container-fluid">
+            <div class="cards-group">
+                @for (var i = 0; i < 7; i++)
+                {
+                    <div class="card card-default">
+                        <div class="card-header"></div>
+                        <div class="card-body">
+                            @* <div class="form-group row">
+                                <div class="col-md-3">
+                                    <nop-override-store-checkbox asp-for="ProfilePictures[i]" />
+                                    <nop-label asp-for="ProfilePictures[i]" />
+                                </div>
+                                <div class="col-md-9">
+                                    <input type="file" asp-for="ProfilePictures[i]" class="form-control" />
+                                    <span asp-validation-for="ProfilePictures[i]"></span>
+                                </div>
+                            </div> *@
+                            <div class="form-group row">
+                                <div class="col-md-3">
+                                    <nop-override-store-checkbox asp-for="ProfilePictures[i]" asp-input="Picture3Id" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                                    <nop-label asp-for="Picture3Id" />
+                                </div>
+                                <div class="col-md-9">
+                                    <nop-editor asp-for="Picture3Id" />
+                                    <span asp-validation-for="Picture3Id"></span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-3">
+                                    <nop-override-store-checkbox asp-for="Names[i]" />
+                                    <nop-label asp-for="Names[i]" />
+                                </div>
+                                <div class="col-md-9">
+                                    <nop-editor asp-for="Names[i]" />
+                                    <span asp-validation-for="Names[i]"></span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-3">
+                                    <nop-override-store-checkbox asp-for="Designations[i]" />
+                                    <nop-label asp-for="Designations[i]" />
+                                </div>
+                                <div class="col-md-9">
+                                    <nop-editor asp-for="Designations[i]" />
+                                    <span asp-validation-for="Designations[i]"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+                <div class="card card-default">
+                    <div class="card-body">
+                        <div class="form-group row">
+                            <div class="col-md-9 offset-md-3">
+                                <button type="submit" name="save" class="btn btn-primary">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</form>
