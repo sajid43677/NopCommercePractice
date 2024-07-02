@@ -1,0 +1,27 @@
+﻿@model List<NopStationEmployeePublicModel>
+
+
+<div>
+    <h2>Employee List</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Designation</th>
+                <th>Countr</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var employee in Model)
+            {
+                <tr>
+                    <td>@employee.Name</td>
+                    <td>@employee.Designation</td>
+                    <td>@employee.Country</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+

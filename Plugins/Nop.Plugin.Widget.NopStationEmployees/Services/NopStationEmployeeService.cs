@@ -52,4 +52,9 @@ public class NopStationEmployeeService : INopStationEmployeeService
 
         return await query.ToPagedListAsync(pageIndex, pageSize);
     }
+
+    public Task<List<NopStationEmployee>> GetAllEmployeesAsync()
+    {
+        return _nopStationEmployeeRepository.Table.ToListAsync();
+    }
 }

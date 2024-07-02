@@ -13,6 +13,7 @@ public interface INopStationEmployeeService
     Task UpdateEmployeeAsync(NopStationEmployee employee);
     Task DeleteEmployeeAsync(NopStationEmployee employee);
     Task<NopStationEmployee> GetEmployeeByIdAsync(int employeeId);
+    Task<List<NopStationEmployee>> GetAllEmployeesAsync();
 
     Task<IPagedList<NopStationEmployee>> SearchNopStationEmployeesAsync(string name, int countryId, int pageIndex = 0, int pageSize = int.MaxValue);
 }

@@ -30,8 +30,16 @@ public class ViewLocationExpanderAdmin : IViewLocationExpander
     public IEnumerable<string> ExpandViewLocations(ViewLocationExpanderContext context,
     IEnumerable<string> viewLocations)
     {
-        viewLocations = new[] { $"/Plugins/Widgets.NopStationEmployees/Areas/{context.AreaName}/Views/{context.ControllerName}/{context.ViewName}.cshtml" }
-            .Concat(viewLocations);
+        if(context.AreaName == AreaNames.ADMIN)
+        {
+            viewLocations = new[] { $"/Plugins/Widgets.NopStationEmployees/Areas/{context.AreaName}/Views/{context.ControllerName}/{context.ViewName}.cshtml" }
+                .Concat(viewLocations);
+        }
+        else
+        {
+            viewLocations = new[] { $"/Plugins/Widgets.NopStationEmployees/Views/{context.ControllerName}/{context.ViewName}.cshtml" }
+                .Concat(viewLocations);
+        }
 
         return viewLocations;
     }
