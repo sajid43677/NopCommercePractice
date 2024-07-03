@@ -353,7 +353,7 @@ public class ManualPaymentProcessor : BasePlugin, IPaymentMethod
     /// <summary>
     /// Gets a value indicating whether capture is supported
     /// </summary>
-    public bool SupportCapture => false;
+    public bool SupportCapture => true;
 
     /// <summary>
     /// Gets a value indicating whether partial refund is supported

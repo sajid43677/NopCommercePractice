@@ -37,7 +37,7 @@ public class ViewLocationExpanderAdmin : IViewLocationExpander
         }
         else
         {
-            viewLocations = new[] { $"/Plugins/Widgets.NopStationEmployees/Views/{context.ControllerName}/{context.ViewName}.cshtml" }
+            viewLocations = new[] { $"/Plugins/Widgets.NopStationEmployees/Views/Shared/{context.ViewName}.cshtml" }
                 .Concat(viewLocations);
         }
 

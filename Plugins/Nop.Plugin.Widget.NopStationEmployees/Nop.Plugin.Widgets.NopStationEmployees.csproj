@@ -55,7 +55,7 @@
     <None Update="Areas\Admin\Views\NopStationEmployee\_CreateOrUpdate.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Views\List.cshtml">
+    <None Update="Views\Shared\Components\NopStationEmployeesComponent\Default.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

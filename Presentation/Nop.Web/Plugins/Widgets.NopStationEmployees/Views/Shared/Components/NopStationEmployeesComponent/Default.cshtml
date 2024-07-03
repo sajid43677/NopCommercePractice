@@ -1,0 +1,70 @@
+﻿@model List<NopStationEmployeePublicModel>
+
+
+<div>
+    <h2 class="employee-head">Employee List</h2>
+    <table class="employee-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Designation</th>
+                <th>Country</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var employee in Model)
+            {
+                <tr>
+                    <td>@employee.Name</td>
+                    <td>@employee.Designation</td>
+                    <td>@employee.Country</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<style>
+    .employee-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 18px;
+        text-align: left;
+    }
+
+        .employee-table thead tr {
+            background-color: #f2f2f2;
+            color: #333;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .employee-table th, .employee-table td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        .employee-table tbody tr {
+            border-bottom: 1px solid #ddd;
+        }
+
+            .employee-table tbody tr:nth-of-type(even) {
+                background-color: #f9f9f9;
+            }
+
+            .employee-table tbody tr:last-of-type {
+                border-bottom: 2px solid #248ece;
+            }
+
+            .employee-table tbody tr:hover {
+                background-color: #f1f1f1;
+            }
+
+    .employee-head {
+        padding-left: 37%;
+    }
+</style>
+
+

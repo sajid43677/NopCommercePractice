@@ -4,13 +4,47 @@
   ],
   "InstalledPlugins": [
     {
+      "SystemName": "Payments.PayPalCommerce",
+      "Version": "4.70.6"
+    },
+    {
+      "SystemName": "Payments.Manual",
+      "Version": "4.70.3"
+    },
+    {
       "SystemName": "Widgets.NopStationEmployees",
       "Version": "1.00.0"
+    },
+    {
+      "SystemName": "DiscountRequirement.MustBeAssignedToCustomerRole",
+      "Version": "4.70.3"
+    },
+    {
+      "SystemName": "CurrencyExchange.ECB",
+      "Version": "4.70.2"
+    },
+    {
+      "SystemName": "Payments.CheckMoneyOrder",
+      "Version": "4.70.2"
+    },
+    {
+      "SystemName": "Pickup.PickupInStore",
+      "Version": "4.70.7"
+    },
+    {
+      "SystemName": "Shipping.FixedByWeightByTotal",
+      "Version": "4.70.7"
+    },
+    {
+      "SystemName": "Tax.FixedOrByCountryStateZip",
+      "Version": "4.70.5"
     }
   ],
   "PluginNamesToUninstall": [
     "Widgets.NopStationEmployees"
   ],
-  "PluginNamesToDelete": [],
+  "PluginNamesToDelete": [
+    "Widgets.NopStationGallary"
+  ],
   "PluginNamesToInstall": []
 }

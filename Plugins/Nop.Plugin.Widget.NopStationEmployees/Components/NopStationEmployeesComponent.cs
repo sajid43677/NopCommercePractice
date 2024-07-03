@@ -27,6 +27,6 @@ public class NopStationEmployeesComponent : NopViewComponent
     public async Task<IViewComponentResult> InvokeAsync(string widgetZone, object additionalData)
     {
         var model = await _nopStationEmployeePublicModelFactory.PreparePublicModel();
-        return View("~/Plugins/Widgets.NopStationEmployees/Views/List.cshtml", model);
+        return View(model);
     }
 }
