@@ -1,0 +1,12 @@
+﻿{
+  "Group": "Nop-Station",
+  "FriendlyName": "Nop-Station MikesChainsaw Theme",
+  "SystemName": "NopStation.Plugin.Theme.MikesChainsaw",
+  "Version": "4.70.1",
+  "SupportedVersions": [ "4.70" ],
+  "Author": "Nop-Station Team",
+  "DisplayOrder": 1,
+  "FileName": "NopStation.Plugin.Theme.MikesChainsaw.dll",
+  "Description": "This plugin allows to configure NopStation Mikes Chainsaw theme.",
+  "DependsOnSystemNames": [ "NopStation.Core" ]
+}

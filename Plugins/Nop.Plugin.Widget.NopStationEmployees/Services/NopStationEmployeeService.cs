@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Nop.Core;
+using Nop.Core.Domain.Catalog;
+using Nop.Core.Domain.Orders;
 using Nop.Data;
 using Nop.Plugin.Widget.NopStationEmployees.Domain;
 
@@ -11,10 +13,14 @@ namespace Nop.Plugin.Widget.NopStationEmployees.Services;
 public class NopStationEmployeeService : INopStationEmployeeService
 {
     private readonly IRepository<NopStationEmployee> _nopStationEmployeeRepository;
+    private readonly IRepository<Product> _productRepo;
+    private readonly IRepository<OrderItem> _orderRepo;
 
-    public NopStationEmployeeService(IRepository<NopStationEmployee> nopStationEmployeeRepository)
+    public NopStationEmployeeService(IRepository<NopStationEmployee> nopStationEmployeeRepository, IRepository<Product> productRepo, IRepository<OrderItem> orderRepo)
     {
         _nopStationEmployeeRepository = nopStationEmployeeRepository;
+        _productRepo = productRepo;
+        _orderRepo = orderRepo;
     }
 
     public async Task AddEmployeeAsync(NopStationEmployee employee)
@@ -56,5 +62,11 @@ public class NopStationEmployeeService : INopStationEmployeeService
     public Task<List<NopStationEmployee>> GetAllEmployeesAsync()
     {
         return _nopStationEmployeeRepository.Table.ToListAsync();
+    }
+
+    public async Task getsss()
+    {
+        var tmpp = await _productRepo.Table.ToListAsync();
+        var tmpo = await _orderRepo.Table.ToListAsync();
     }
 }

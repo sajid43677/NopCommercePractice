@@ -63,6 +63,8 @@ public partial class HomepageBestSellersViewComponent : NopViewComponent
             //availability dates
             .Where(p => _productService.ProductIsAvailable(p)).ToListAsync();
 
+
+
         if (!products.Any())
             return Content("");
 

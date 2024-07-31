@@ -1,5 +1,69 @@
 ﻿@model List<NopStationEmployeePublicModel>
 
+<script src="~/Plugins/Widgets.NopStationEmployees/Contents/js/dist/browser/signalr.js"></script>
+@* <script src="~/Plugins/Widgets.NopStationEmployees/Contents/js/chat.js"></script> *@
+<script>
+    "use strict";
+
+    var connection = new signalR.HubConnectionBuilder().withUrl("/testmessagehub").build();
+
+    //Disable the send button until connection is established.
+    document.getElementById("sendButton").disabled = true;
+
+    connection.on("ReceiveMessage", function (user, message) {
+        var li = document.createElement("li");
+        document.getElementById("messagesList").appendChild(li);
+        // We can assign user-supplied strings to an element's textContent because it
+        // is not interpreted as markup. If you're assigning in any other way, you
+        // should be aware of possible script injection concerns.
+        li.textContent = `${user} says ${message}`;
+    });
+
+    connection.start().then(function () {
+        document.getElementById("sendButton").disabled = false;
+    }).catch(function (err) {
+        return console.error(err.toString());
+    });
+
+    document.getElementById("sendButton").addEventListener("click", function (event) {
+        var user = document.getElementById("userInput").value;
+        var message = document.getElementById("messageInput").value;
+        connection.invoke("SendMessageAsync", user, message).catch(function (err) {
+            return console.error(err.toString());
+        });
+        event.preventDefault();
+    }); "use strict";
+
+    var connection = new signalR.HubConnectionBuilder().withUrl("/testmessagehub").build();
+
+    //Disable the send button until connection is established.
+    document.getElementById("sendButton").disabled = true;
+
+    connection.on("ReceiveMessage", function (user, message) {
+        var li = document.createElement("li");
+        document.getElementById("messagesList").appendChild(li);
+        // We can assign user-supplied strings to an element's textContent because it
+        // is not interpreted as markup. If you're assigning in any other way, you
+        // should be aware of possible script injection concerns.
+        li.textContent = `${user} says ${message}`;
+    });
+
+    connection.start().then(function () {
+        document.getElementById("sendButton").disabled = false;
+    }).catch(function (err) {
+        return console.error(err.toString());
+    });
+
+    document.getElementById("sendButton").addEventListener("click", function (event) {
+        var user = document.getElementById("userInput").value;
+        var message = document.getElementById("messageInput").value;
+        connection.invoke("SendMessageAsync", user, message).catch(function (err) {
+            return console.error(err.toString());
+        });
+        event.preventDefault();
+    });
+
+</script>
 
 <div>
     <h2 class="employee-head">Employee List</h2>
@@ -22,6 +86,31 @@
             }
         </tbody>
     </table>
+</div>
+<div class="container">
+    <div class="row p-1">
+        <div class="col-1">User</div>
+        <div class="col-5"><input type="text" id="userInput" /></div>
+    </div>
+    <div class="row p-1">
+        <div class="col-1">Message</div>
+        <div class="col-5"><input type="text" class="w-100" id="messageInput" /></div>
+    </div>
+    <div class="row p-1">
+        <div class="col-6 text-end">
+            <input type="button" id="sendButton" value="Send Message" />
+        </div>
+    </div>
+    <div class="row p-1">
+        <div class="col-6">
+            <hr />
+        </div>
+    </div>
+    <div class="row p-1">
+        <div class="col-6">
+            <ul id="messagesList"></ul>
+        </div>
+    </div>
 </div>
 
 <style>
@@ -66,5 +155,7 @@
         padding-left: 37%;
     }
 </style>
+@* C:\nopStation\plugin update\nopstationplugin_470\src\Plugins\Nop.Plugin.Widget.NopStationEmployees\Contents\js\signalr\dist\browser\signalr.js *@
+
 
 

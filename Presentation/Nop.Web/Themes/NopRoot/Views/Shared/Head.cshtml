@@ -1,0 +1,29 @@
+﻿@using Nop.Core
+@using Nop.Services.Helpers
+@using Nop.Web.Framework.UI
+@inject IWorkContext workContext
+@inject IThemeContext themeContext
+@inject IUserAgentHelper userAgentHelper
+@{
+     var themeName = await themeContext.GetWorkingThemeNameAsync();
+     var supportRtl = (await workContext.GetWorkingLanguageAsync()).Rtl;
+
+
+    //add main CSS file
+    if (supportRtl)
+    {
+        NopHtml.AppendCssFileParts($"/Themes/{themeName}/Content/css/styles.rtl.css", string.Empty);
+        NopHtml.AppendCssFileParts($"/Themes/{themeName}/Content/slick/slick.rtl.css", string.Empty);
+    }
+    else
+    {
+        NopHtml.AppendCssFileParts($"/Themes/{themeName}/Content/css/styles.css", string.Empty);
+        NopHtml.AppendCssFileParts($"/Themes/{themeName}/Content/slick/slick.css", string.Empty);
+    }
+    //add jQuery UI css filey
+    NopHtml.AppendCssFileParts($"/lib_npm/jquery-ui-dist/jquery-ui.min.css", string.Empty);
+    NopHtml.AppendCssFileParts($"/Themes/{themeName}/Content/bootstrap-4.6.0-dist/css/bootstrap.min.css", string.Empty);
+    NopHtml.AppendCssFileParts($"/Themes/{themeName}/Content/fontawesome-free-5.15.3-web/css/all.min.css", string.Empty);
+    NopHtml.AppendCssFileParts($"/Themes/{themeName}/Content/slick/slick-theme.css", string.Empty);
+    
+}

@@ -38,13 +38,29 @@
     {
       "SystemName": "Tax.FixedOrByCountryStateZip",
       "Version": "4.70.5"
+    },
+    {
+      "SystemName": "NopStation.Plugin.Theme.MikesChainsaw",
+      "Version": "4.70.1"
+    },
+    {
+      "SystemName": "NopStation.FacebookShopDemo",
+      "Version": "4.70.1.0"
+    },
+    {
+      "SystemName": "NopStation.Core",
+      "Version": "4.70.1.0"
+    },
+    {
+      "SystemName": "NopStation.Plugin.Misc.FacebookShop",
+      "Version": "4.70.1.0"
+    },
+    {
+      "SystemName": "NopStation.Plugin.Payments.StripeHostedCheckout",
+      "Version": "4.70.1.0"
     }
   ],
-  "PluginNamesToUninstall": [
-    "Widgets.NopStationEmployees"
-  ],
-  "PluginNamesToDelete": [
-    "Widgets.NopStationGallary"
-  ],
+  "PluginNamesToUninstall": [],
+  "PluginNamesToDelete": [],
   "PluginNamesToInstall": []
 }
